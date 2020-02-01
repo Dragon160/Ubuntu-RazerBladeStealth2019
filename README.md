@@ -27,7 +27,7 @@ Use it with these commands:
     sudo apt update
     sudo apt install polychromatic
 
-## Display will not turned on after sleep
+## Display will not turn on after sleep
 
 Edit the '/etc/default/grub' file and add this line:
 
