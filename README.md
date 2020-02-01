@@ -68,6 +68,6 @@ After coping you need to start the service again.
 
 Now the sleeping problem should be solved!
 
-## Improve Touchpad drivers
+## Improve Touchpad drivers (nope - no swipe gestures)
 
 tbd
