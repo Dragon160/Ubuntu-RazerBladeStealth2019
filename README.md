@@ -42,7 +42,31 @@ This will tell the system that the initial state of the display is open - and tu
 
 ## Power saving with TLP
 
-tbd
+For getting the best battery life on the notebook I installed _TLP_ (https://github.com/linrunner/TLP) to configure CPU power state and more. The latest version (1.3.x) also supports the latest Intel Ice Lake CPUs which is important for the Razer Stealth.
+
+Installation:
+
+    sudo add-apt-repository ppa:linrunner/tlp
+    sudo apt-get update
+    sudo apt-get install tlp tlp-rdw
+
+To start the service:
+    
+    sudo tlp start
+
+__Be aware__ that know the system sleep mode is __broken__. The reason is as simple as stupid - the default TLP configuration sets maximum CPU performance on battery mode. This also prevents the CPU to go into a deeper sleeping mode (>S0).
+
+To avoid that I created an TLP config file which fix this problem.
+Just copy the file (https://github.com/Dragon160/Ubuntu-RazerBladeStealth2019/blob/master/src/tlp-razer.conf) to this location:
+
+    /etc/tlp.d/tlp-razer.conf
+
+It will just override the given settings from the defaults one.
+After coping you need to start the service again.
+    
+    sudo tlp start
+
+Now the sleeping problem should be solved!
 
 ## Improve Touchpad drivers
 
