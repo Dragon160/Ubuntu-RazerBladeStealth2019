@@ -70,4 +70,28 @@ Now the sleeping problem should be solved!
 
 ## Improve Touchpad drivers (nope - no swipe gestures)
 
-tbd
+IMHO the synaptics driver are performing better than the build-in libinput ones.
+
+To verify which driver are currently active you need to perform the following
+
+    xinput --list
+        -> will return devices and there IDs (touchpad is for me ID 14)
+    xinput --list-props 14
+        -> will list all properties and the used driver
+
+To switch from libinput to synaptics you just need to install the synaptics driver (__do not delete libinput__ as it will be used by the keyboard as well).
+
+Installation and reboot:
+
+    sudo apt install xserver-xorg-input-synaptics
+    sudo systemctl shutdown -r now
+
+Done.
+
+A note to the swipe gestures:
+_I was not able_ to determine how to enable 3-gestures swipes or similar. It seems that this is not supported by the synaptics driver right now. The supported features can be displayed by using:
+
+    synclient
+
+Please give a not if you have found a working solution! :-)
+
