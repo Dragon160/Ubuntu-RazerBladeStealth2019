@@ -11,10 +11,23 @@ In general these changes should be also valid for newer versions of Ubuntu - be 
 
 ## Razer Keyboard lightning
 
-tbd
+You can use the famous _openrazer_ (https://openrazer.github.io/) repository to get the necessary drivers for almost all razer systems.
+
+Installation:
+
+    sudo add-apt-repository ppa:openrazer/stable
+    sudo apt update
+    sudo apt install openrazer-meta
+
+For modifying the keyboard lightning / effects I use _Polychromatic_ (https://github.com/polychromatic/polychromatic).
+
+Use it with these commands:
+
+    sudo add-apt-repository ppa:polychromatic/stable
+    sudo apt update
+    sudo apt install polychromatic
 
 ## Display will not turned on after sleep
-
 
 Edit the '/etc/default/grub' file and add this line:
 
