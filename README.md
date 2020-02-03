@@ -54,7 +54,7 @@ To start the service:
     
     sudo tlp start
 
-__Be aware__ that know the system sleep mode is __broken__. The reason is as simple as stupid - the default TLP configuration sets maximum CPU performance on battery mode. This also prevents the CPU to go into a deeper sleeping mode (>S0).
+__Be aware__ that now the system sleep mode is __broken__. The reason is as simple as stupid - the default TLP configuration sets maximum CPU performance on battery mode. This also prevents the CPU to go into a deeper sleeping mode (>S0).
 
 To avoid that I created an TLP config file which fix this problem.
 Just copy the file (https://github.com/Dragon160/Ubuntu-RazerBladeStealth2019/blob/master/src/tlp-razer.conf) to this location:
@@ -95,3 +95,24 @@ _I was not able_ to determine how to enable 3-gestures swipes or similar. It see
 
 Please give a not if you have found a working solution! :-)
 
+
+## Tips and Tricks
+
+### Gnome Dock 
+
+If you want to minimize your application by clicking on the dock you need to enable that via gnomesettings.
+
+    gsettings set org.gnome.shell.extensions.dash-to-dock click-action minimize
+
+(Remove 'minimize' to disable it again.)  
+
+
+### Dark mode
+
+You can use gnome tweak tools to adjust several ui related settings.
+
+    sudo apt-get install gnome-tweaks 
+
+This will install an application named 'Tweaks' which is listed under your application list. Within here you can enable the dark mode: 
+
+Appearance -> Applications -> Yaru-dark
