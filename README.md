@@ -143,3 +143,16 @@ Appearance -> Applications -> Yaru-dark
 This can easily been done by installing an gnome tweak extension. For the nice dock I use this one
 
     https://extensions.gnome.org/extension/307/dash-to-dock/
+
+## Troubleshooting
+
+### Sleep mode is broken again
+
+Sometimes, it seems that the sleep mode is again broken after installing some gnome extensions or similar things.
+I discovered that in this cases it seeems that _TLP_ is the bad guy.
+Unfortunately the only way to fix is is to reinstall _TLP_
+
+    sudo apt remove tlp
+    sudo apt install tlp
+
+Luckily your settings will be kept.
