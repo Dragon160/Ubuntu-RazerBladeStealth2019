@@ -40,9 +40,30 @@ to apply the settings:
 
 This will tell the system that the initial state of the display is open - and turned on.
 
+## Enable suspend-then-hibernate
+
+One thing I loved on Windows was the default behavior to sleep and than after 1-2 hours to hibernate. That will save you a lot of power for e.g. over the night.
+
+Luckily with Ubuntu this feature just needs to be enabled. First, you need to enable the delay for the suspend-then-hibernate mode:
+
+    /etc/systemd/sleep.conf
+        --> HibernateDelaySec=180min is the default. Change it, if needed
+
+Next, go to
+
+    /etc/systemd/logind.conf
+
+    Change the content of these to options:
+    HandleLidSwitch=suspend-then-hibernate
+    HandleLidSwitchExternalPower=suspend-then-hibernate
+
+Thats it! Do not forget to restart the system or the systemd-logind service.
+
+
 ## Power saving with TLP
 
 For getting the best battery life on the notebook I installed _TLP_ (https://github.com/linrunner/TLP) to configure CPU power state and more. The latest version (1.3.x) also supports the latest Intel Ice Lake CPUs which is important for the Razer Stealth.
+(BTW: I did not performed any battery test so far - it seems that the battery is also without TLP quite good.)
 
 Installation:
 
@@ -51,7 +72,7 @@ Installation:
     sudo apt-get install tlp tlp-rdw
 
 To start the service:
-    
+
     sudo tlp start
 
 __Be aware__ that now the system sleep mode is __broken__. The reason is as simple as stupid - the default TLP configuration sets maximum CPU performance on battery mode. This also prevents the CPU to go into a deeper sleeping mode (>S0).
@@ -63,7 +84,7 @@ Just copy the file (https://github.com/Dragon160/Ubuntu-RazerBladeStealth2019/bl
 
 It will just override the given settings from the defaults one.
 After coping you need to start the service again.
-    
+
     sudo tlp start
 
 Now the sleeping problem should be solved!
@@ -116,3 +137,9 @@ You can use gnome tweak tools to adjust several ui related settings.
 This will install an application named 'Tweaks' which is listed under your application list. Within here you can enable the dark mode: 
 
 Appearance -> Applications -> Yaru-dark
+
+### macOs like Dock
+
+This can easily been done by installing an gnome tweak extension. For the nice dock I use this one
+
+    https://extensions.gnome.org/extension/307/dash-to-dock/
