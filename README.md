@@ -59,6 +59,18 @@ Next, go to
 
 Thats it! Do not forget to restart the system or the systemd-logind service.
 
+### Enable hibernate at all
+
+If hibernate is not working for you at all (see test below) you need to do serveral things.
+
+    // test if hibernate is working - after power on again, it should not be a reboot
+    sudo systemctl hibernate
+
+This blog describes it very good:
+https://notes.palsch.de/2019/07/ubuntu-18-04-lts-hibernate-to-swapfile/
+
+Basically its all about increasing your swapfile, and edit the grub to use the swapfile as an resume point.
+
 
 ## Power saving with TLP
 
@@ -156,3 +168,8 @@ Unfortunately the only way to fix is is to reinstall _TLP_
     sudo apt install tlp
 
 Luckily your settings will be kept.
+__If this is not working for you__ I would recommend to do not use _TLP_. Uninstall it with
+
+    sudo apt remove tlp
+
+and reboot. Battery life is still quite good :-)
