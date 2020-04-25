@@ -1,0 +1,24 @@
+swipe:
+  3: 
+    left: 
+      command: 'xdotool key alt+Right'
+    right: 
+      command: 'xdotool key alt+Left'
+    up: 
+      command: 'xdotool key super+d'
+    down: 
+      command: 'xdotool key super+d'
+  4:
+    left: 
+      command: 'xdotool key ctrl+alt+Down'
+    right: 
+      command: 'xdotool key ctrl+alt+Up'
+    up: 
+      command: 'xdotool key super+d'
+    down: 
+      command: 'xdotool key super+d'
+pinch:
+  in:
+    command: 'xdotool keydown ctrl click 4 keyup ctrl'
+  out:
+    command: 'xdotool keydown ctrl click 5 keyup ctrl'

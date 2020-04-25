@@ -101,32 +101,18 @@ After coping you need to start the service again.
 
 Now the sleeping problem should be solved!
 
-## Improve Touchpad drivers (nope - no swipe gestures)
+## Touchpad multitouch / swipe
 
-IMHO the synaptics driver are performing better than the build-in libinput ones.
+Out of the box unfortuntely only 2-finger scrolling is supported. To recognize swipe and pinch gestures you can use a great app called _Fusuma_
 
-To verify which driver are currently active you need to perform the following
+    https://github.com/iberianpig/fusuma
 
-    xinput --list
-        -> will return devices and there IDs (touchpad is for me ID 14)
-    xinput --list-props 14
-        -> will list all properties and the used driver
+It works out of the box - do not forget to start it with the command:
 
-To switch from libinput to synaptics you just need to install the synaptics driver (__do not delete libinput__ as it will be used by the keyboard as well).
+    fusuma
 
-Installation and reboot:
+You can find a demo configuration file here https://github.com/Dragon160/Ubuntu-RazerBladeStealth2019/blob/master/src/fusuma-razer.yml)
 
-    sudo apt install xserver-xorg-input-synaptics
-    sudo systemctl shutdown -r now
-
-Done.
-
-A note to the swipe gestures:
-_I was not able_ to determine how to enable 3-gestures swipes or similar. It seems that this is not supported by the synaptics driver right now. The supported features can be displayed by using:
-
-    synclient
-
-Please give a not if you have found a working solution! :-)
 
 
 ## Tips and Tricks
