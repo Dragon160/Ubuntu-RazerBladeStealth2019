@@ -13,8 +13,33 @@ Nothing really worth to mention beside:
 ### Direct upgrade path from Win 10
 Smooth - works out of the box. Not a single problem occured while doing that.
 
+
 ### Fresh installation
--- fill me (Intel Smart Sound, Intel IO driver) --
+Now this is becoming weird. As smooth as the direct upgrade works as shitty is the experience when doing a fresh install.
+You may wonder why?
+
+- Touchpad is not working out of the box
+- Bluetooth is not working out of the box
+- Sound device is either not working or sounds horrible (missing driver with Dolby Atmos)
+
+So my recommendation when doing a fresh installation: Get yourself a mouse with an good old USB-Cable. Otherwise you will suffer a lot..
+
+### Drivers
+Razer offers the missing drivers here https://mysupport.razer.com/app/answers/detail/a_id/9705
+
+The problem is that most of them are not needed due to Windows Update and its tricky to find out which of them you need.
+
+- Trackpad: Install 'Intel Serial IO' driver
+- Bluetooth: Install 'Intel Wireless AX 201' driver
+- Sound: Intall 'Intel Smart Sound technology'
+
+In theory all of them should be available as well via Intel Driver Assistent (https://www.intel.com/content/www/us/en/support/detect.html) but for me it worked only for bluetooth.
+
+
+
+## Pop!_OS 22.10
+
+
 
 ## Ubuntu 19.10
 In general these changes should be also valid for newer versions of Ubuntu - be aware that the settings are only tested with the following system setup.
