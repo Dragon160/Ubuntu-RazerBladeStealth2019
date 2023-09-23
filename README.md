@@ -39,6 +39,25 @@ In theory all of them should be available as well via Intel Driver Assistent (ht
 
 ## Pop!_OS 22.10
 
+Long story short - almost all of the problems you read below with an older Ubuntu distro are solved. I really like Pop!OS. It comes with great out-of-the-box experience, its fast and it works smoothly with the razor blade.
+
+https://pop.system76.com/
+
+Works out of the box:
+- Touchpad with(!) multitouch support
+- Graphics
+- Sound
+- Keyboard shortcuts
+- Sleep (ok - one small thing to metion soon: Wake up..) 
+
+Unfortunately, the sleep-wakeup problem seems still to be present - but in a different way. My installation of pop!os is based on the Kernel 6.x. If you n.-ow close the laptop lid it goes to sleep; open it - nothing :-) 
+If you close and open it again - bam. Works. 
+
+So: Just close and open it again.
+
+Its weird and I couldnt figure out why. But it is an acceptable workaround compared to older kernel / distro versions.
+
+
 
 
 ## Ubuntu 19.10
