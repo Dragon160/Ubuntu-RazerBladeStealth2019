@@ -1,4 +1,4 @@
-# Ubuntu @ Razer Blade Stealth (late 2019) Mercury White
+# Different OS @ Razer Blade Stealth (late 2019) Mercury White
 
 This repository contains info about running the Blade under different OS. The default OS is Windows 10 - even if the upgrade to Win11 is basically a no brainer there a few interesting things.
 Beside Windows I try out different Linux distros from time to time..
