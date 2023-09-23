@@ -1,6 +1,22 @@
 # Ubuntu @ Razer Blade Stealth (late 2019) Mercury White
 
-## This repository holds all info for running Ubuntu 19.10 on the Blade
+This repository contains info about running the Blade under different OS. The default OS is Windows 10 - even if the upgrade to Win11 is basically a no brainer there a few interesting things.
+Beside Windows I try out different Linux distros from time to time..
+
+## Windows 10
+This is the OS the device was delivered with. 
+Nothing really worth to mention beside:
+- Be aware of the Intel graphic setting "Panel Self Refresh". If you notice flickering disable this option within the Intel Graphics command center.
+
+## Windows 11
+
+### Direct upgrade path from Win 10
+Smooth - works out of the box. Not a single problem occured while doing that.
+
+### Fresh installation
+-- fill me (Intel Smart Sound, Intel IO driver) --
+
+## Ubuntu 19.10
 In general these changes should be also valid for newer versions of Ubuntu - be aware that the settings are only tested with the following system setup.
 
 - Ubuntu 19.10 using Xorg
@@ -9,7 +25,7 @@ In general these changes should be also valid for newer versions of Ubuntu - be 
 - Razer Blade Stealth (Core i7-1065G7, Intel Iris Plus Graphics, 16GB Ram, 256GB NMVe SSD)
 
 
-## Razer Keyboard lightning
+### Razer Keyboard lightning
 
 You can use the famous _openrazer_ (https://openrazer.github.io/) repository to get the necessary drivers for almost all razer systems.
 
@@ -27,7 +43,7 @@ Use it with these commands:
     sudo apt update
     sudo apt install polychromatic
 
-## Display will not turn on after sleep
+### Display will not turn on after sleep
 
 Edit the '/etc/default/grub' file and add this line:
 
@@ -40,7 +56,7 @@ to apply the settings:
 
 This will tell the system that the initial state of the display is open - and turned on.
 
-## Enable suspend-then-hibernate
+### Enable suspend-then-hibernate
 
 One thing I loved on Windows was the default behavior to sleep and than after 1-2 hours to hibernate. That will save you a lot of power for e.g. over the night.
 
@@ -59,7 +75,7 @@ Next, go to
 
 Thats it! Do not forget to restart the system or the systemd-logind service.
 
-### Enable hibernate at all
+#### Enable hibernate at all
 
 If hibernate is not working for you at all (see test below) you need to do serveral things.
 
@@ -72,7 +88,7 @@ https://notes.palsch.de/2019/07/ubuntu-18-04-lts-hibernate-to-swapfile/
 Basically its all about increasing your swapfile, and edit the grub to use the swapfile as an resume point.
 
 
-## Power saving with TLP
+### Power saving with TLP
 
 For getting the best battery life on the notebook I installed _TLP_ (https://github.com/linrunner/TLP) to configure CPU power state and more. The latest version (1.3.x) also supports the latest Intel Ice Lake CPUs which is important for the Razer Stealth.
 (BTW: I did not performed any battery test so far - it seems that the battery is also without TLP quite good.)
@@ -101,7 +117,7 @@ After coping you need to start the service again.
 
 Now the sleeping problem should be solved!
 
-## Touchpad multitouch / swipe
+### Touchpad multitouch / swipe
 
 Out of the box unfortuntely only 2-finger scrolling is supported. To recognize swipe and pinch gestures you can use a great app called _Fusuma_
 
@@ -115,9 +131,9 @@ You can find a demo configuration file here https://github.com/Dragon160/Ubuntu-
 
 
 
-## Tips and Tricks
+### Tips and Tricks
 
-### Gnome Dock 
+#### Gnome Dock 
 
 If you want to minimize your application by clicking on the dock you need to enable that via gnomesettings.
 
@@ -126,7 +142,7 @@ If you want to minimize your application by clicking on the dock you need to ena
 (Remove 'minimize' to disable it again.)  
 
 
-### Dark mode
+#### Dark mode
 
 You can use gnome tweak tools to adjust several ui related settings.
 
@@ -136,15 +152,15 @@ This will install an application named 'Tweaks' which is listed under your appli
 
 Appearance -> Applications -> Yaru-dark
 
-### macOs like Dock
+#### macOs like Dock
 
 This can easily been done by installing an gnome tweak extension. For the nice dock I use this one
 
     https://extensions.gnome.org/extension/307/dash-to-dock/
 
-## Troubleshooting
+### Troubleshooting
 
-### Sleep mode is broken again
+#### Sleep mode is broken again
 
 Sometimes, it seems that the sleep mode is again broken after installing some gnome extensions or similar things.
 I discovered that in this cases it seeems that _TLP_ is the bad guy.
